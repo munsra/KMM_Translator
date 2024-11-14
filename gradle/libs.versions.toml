@@ -21,9 +21,11 @@ navigationCompose = "2.8.0-alpha10"
 lifecycleViewModel = "2.8.7"
 ktorVersion = "3.0.1"
 dateTimeVersion = "0.4.0"
-sqlDelight = "2.0.2"
 assertKVersion = "0.28.1"
 turbineVersion = "1.2.0"
+room = "2.7.0-alpha11"
+ksp = "2.0.21-1.0.25"
+sqlite = "2.5.0-alpha11"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -58,13 +60,13 @@ koin-core = { module = "io.insert-koin:koin-core", version.ref = "koin" }
 koin-compose = { module = "io.insert-koin:koin-compose", version.ref = "koinComposeMultiplatform" }
 koin-compose-viewmodel = { module = "io.insert-koin:koin-compose-viewmodel", version.ref = "koinComposeMultiplatform" }
 
-sqldelight-androidDriver = { module = "app.cash.sqldelight:android-driver", version.ref = "sqlDelight" }
-sqldelight-nativeDriver = { module = "app.cash.sqldelight:native-driver", version.ref = "sqlDelight" }
-sqldelight-coroutines = { module = "app.cash.sqldelight:coroutines-extensions", version.ref="sqlDelight"}
-sqldelight-runtime = { module = "app.cash.sqldelight:runtime", version.ref = "sqlDelight"}
-
 assertK = { module = "com.willowtreeapps.assertk:assertk", version.ref = "assertKVersion" }
 turbine = { module = "app.cash.turbine:turbine", version.ref = "turbineVersion" }
+
+room-compiler = { module = "androidx.room:room-compiler", version.ref = "room" }
+room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
+room-runtime-android = { group = "androidx.room", name = "room-runtime-android", version.ref = "room" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }
@@ -72,4 +74,5 @@ androidLibrary = { id = "com.android.library", version.ref = "agp" }
 composeMultiplatform = { id = "org.jetbrains.compose", version.ref = "compose-multiplatform" }
 composeCompiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 kotlinMultiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
-sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight"}
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+room = { id = "androidx.room", version.ref = "room" }

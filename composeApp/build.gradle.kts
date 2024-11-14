@@ -7,6 +7,8 @@ plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
+    alias(libs.plugins.ksp)
+    alias(libs.plugins.room)
 }
 
 kotlin {
@@ -38,7 +40,6 @@ kotlin {
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.okhttp)
             implementation(libs.ktor.client.android)
-            implementation(libs.sqldelight.androidDriver)
         }
         commonMain.dependencies {
             implementation(compose.runtime)
@@ -67,13 +68,12 @@ kotlin {
             implementation(libs.lifecycle.viewmodel)
             implementation(libs.navigation.compose)
 
-            implementation(libs.sqldelight.runtime)
-            implementation(libs.sqldelight.coroutines)
+            implementation(libs.room.runtime)
+            implementation(libs.sqlite.bundled)
         }
 
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
-            implementation(libs.sqldelight.nativeDriver)
         }
     }
 }
@@ -106,6 +106,11 @@ android {
 }
 
 dependencies {
+    implementation(libs.room.runtime.android)
     debugImplementation(compose.uiTooling)
+    ksp(libs.room.compiler)
 }
 
+room {
+    schemaDirectory("$projectDir/schemas")
+}
