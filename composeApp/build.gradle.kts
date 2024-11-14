@@ -37,6 +37,7 @@ kotlin {
             implementation(libs.koin.android)
             implementation(libs.koin.androidx.compose)
             implementation(libs.ktor.client.okhttp)
+            implementation(libs.ktor.client.android)
             implementation(libs.sqldelight.androidDriver)
         }
         commonMain.dependencies {
@@ -51,6 +52,7 @@ kotlin {
             implementation(libs.navigation.compose)
             implementation(libs.assertK)
             implementation(libs.turbine)
+            implementation(libs.kotlinDateTime)
 
             implementation(libs.coil)
             implementation(libs.coilKtor)
